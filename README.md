@@ -1,1 +1,0 @@
-# To practice Next.js
