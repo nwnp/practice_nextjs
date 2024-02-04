@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/Layout";
 import utilStyles from "../styles/utils.module.css";
-import { useEffect, useState } from "react";
+import Link from "next/link";
 
 /** SSG */
 // export async function getStaticProps() {
@@ -59,6 +59,12 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
+      <div>
+        <Link href="/posts/first-post">First Post</Link>
+      </div>
+      <div>
+        <Link href="/posts/second-post">Second Post</Link>
+      </div>
     </Layout>
   );
 }
