@@ -45,14 +45,3 @@ export default function Home({ allPostsData }) {
     </Layout>
   );
 }
-
-/** SSR */
-// export async function getServerSideProps() {
-//   const response = await fetch("http://localhost:3000/api/posts");
-//   const json = await response.json();
-//   return {
-//     props: {
-//       allPostsData: json.allPostsData,
-//     },
-//   };
-// }

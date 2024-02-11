@@ -50,6 +50,7 @@ export function getAllPostIds() {
 
 export async function getPostData(id) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
+  console.log(fullPath);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section
@@ -71,15 +72,13 @@ export async function getPostData(id) {
 export async function createPost({ id, title, date, content }) {
   try {
     const fullPath = path.join(postsDirectory, `${id}.md`);
-    //     const data = `---
-    // id: ${id}
-    // title: ${title}
-    // date: ${date.toISOString().slice(0, 10).replace(/-/g, "/")}
-    // ---
-    // ${content}`;
-    console.log(date.toISOString().slice(0, 10).replace(/-/g, "/"));
+    const data = `---
+title: '${title}'
+date: '${date}'
+---
+${content}`;
 
-    // fs.writeFileSync(fullPath, data);
+    fs.writeFileSync(fullPath, data);
   } catch (error) {
     return { error: `create failed ${error}` };
   }

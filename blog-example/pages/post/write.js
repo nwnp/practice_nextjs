@@ -1,15 +1,15 @@
-import React, { useRef, useState } from "react";
-import Layout from "../../components/Layout";
-import Head from "next/head";
 import Link from "next/link";
+import Layout from "../../components/Layout";
+import React, { useRef, useState } from "react";
 
 export default function Write() {
+  // varibales
   const idRef = useRef(undefined);
   const titleRef = useRef(undefined);
   const contentRef = useRef(undefined);
-
   const [showLink, setShowLink] = useState(false);
 
+  // functions
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -37,6 +37,7 @@ export default function Write() {
     }
   };
 
+  // return
   return (
     <Layout>
       <h1>Write a post</h1>
